@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-ar" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GLSL Sandbox</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "@monaco-editor/react": "https://aistudiocdn.com/@monaco-editor/react@^4.7.0",
+        "monaco-editor/": "https://aistudiocdn.com/monaco-editor@^0.53.0/",
+      }
+    }
+</script>
+<style>
+  body {
+    background-color: #09090b; /* Fallback */
+    background-image: radial-gradient(circle at top left, #18181b, #09090b);
+    font-family: 'Fira Code', monospace;
+  }
+  .font-mono { /* Override Tailwind's default mono font */
+    font-family: 'Fira Code', monospace;
+  }
+
+  /* Style for the word highlighting in the editor, similar to VS Code's occurrence highlight */
+  .word-highlight {
+    background-color: rgba(144, 164, 174, 0.15); /* A subtle blue-gray background */
+    border: 1px solid rgba(144, 164, 174, 0.3);
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensure border doesn't affect layout */
+  }
+  
+  /* Style for custom scrollbar in tabs */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.4);
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(136, 136, 136, 0.7);
+  }
+  /* For Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(136, 136, 136, 0.4) transparent;
+  }
+
+  /* Animations for UI elements like the context menu */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-fade-in-fast {
+    animation: fadeIn 0.1s ease-out forwards;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
