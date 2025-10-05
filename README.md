@@ -1,7 +1,7 @@
 # GLSL Sandbox
 
 <div align="center">
-  <img src="/imgs/gemini.png" alt="Gemini Logo" width="150"/>
+  <img src="/imgs/gemini.png" alt="Gemini Logo" width="700"/>
 </div>
 
 <br>
